@@ -1,5 +1,13 @@
 <h2>Log in page</h2>
 
+{{#if message.error}}
+<div class="error notice">
+    <p>
+        user name or password do not match
+    </p>
+</div>
+{{/if}}
+
  <form method='POST' action="/user/login" enctype="application/x-www-form-urlencoded">
   <div class="form-group">
       <input name="username" placeholder="Username"class="form-control" id='usr'>

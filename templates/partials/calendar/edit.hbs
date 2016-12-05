@@ -1,0 +1,11 @@
+<h2>{{data.title}}</h2>
+
+
+<form method='POST' action="/calendar/{{data.appointment.id}}" enctype="application/x-www-form-urlencoded">
+    <input name="username" placeholder="Name" value="{{data.appointment.username}}">
+    <input type="date" name="date" placeholder="Date" value="{{data.appointment.date}}">
+    <input type="time" name="time" placeholder="Time" value="{{data.appointment.time}}">
+    <input name="color" placeholder="Color" value="{{data.appointment.color}}">
+    <button type="submit" name="">Make Appointment</button>
+
+</form>

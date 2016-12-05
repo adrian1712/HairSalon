@@ -1,0 +1,23 @@
+<h2>CALENDAR</h2>
+
+<a class="btn btn-primary" href="calendar/create">Make Apionment</a>
+
+
+{{#each data.appointmentList}}
+    <div class="panel panel-default">
+        <div class="panel-body" >
+            <div>
+                <strong>Name </strong> <a href="/calendar/{{id}}">{{username}}</a> 
+            </div>
+            <div>
+                <strong>Date </strong> {{date}}
+            </div>
+            <div>
+                <strong>Time </strong> {{time}}
+            </div>
+            <div>
+                <strong>Color </strong> {{color}}
+            </div>
+        </div>
+    </div>
+{{/each}}
