@@ -2,6 +2,7 @@
 
 
 <form method='POST' action="/calendar/{{data.appointment.id}}" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="_method" value="{{data.method}}">
     <input name="username" placeholder="Name" value="{{data.appointment.username}}">
     <input type="date" name="date" placeholder="Date" value="{{data.appointment.date}}">
     <input type="time" name="time" placeholder="Time" value="{{data.appointment.time}}">
