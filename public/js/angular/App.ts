@@ -6,7 +6,9 @@ namespace App {
             $stateProvider
                 .state ('home', {
                     url: '/',
-                    template: 'this is home'
+                    templateUrl: '/templates/partials/home.html',
+                    controller: App.HomeController,
+                    controllerAs: 'homeController'
                 })
         }
     ])
