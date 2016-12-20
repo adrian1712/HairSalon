@@ -1,0 +1,20 @@
+<h2>Product</h2>
+
+<a class="btn btn-primary"href="/product/{{ data.product.id }}/edit">Edit Appointment</a>
+<a class="btn btn-danger"href="/product/{{ data.product.id }}/delete">Delete Appointment</a>
+
+
+
+<div class="panel panel-default">
+    <div class="panel-body" >
+        <div>
+            <strong>Name </strong> {{data.product.product}}
+        </div>
+        <div>
+            <strong>Price</strong>{{data.product.price}}
+        </div>
+        <div>
+            <strong>Description</strong>{{data.product.description}}
+        </div>
+    </div>
+</div>

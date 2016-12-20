@@ -1,0 +1,20 @@
+<h2>Products</h2>
+
+<a class="btn btn-primary" href="product/create">Make Products</a>
+
+
+{{#each data.productList}}
+    <div class="panel panel-default">
+        <div class="panel-body" >
+            <div>
+                <strong>Name </strong> <a href="/product/{{id}}">{{product}}</a>
+            </div>
+            <div>
+                <strong>Price</strong>{{price}}
+            </div>
+            <div>
+                <strong>Description</strong>{{description}}
+            </div>
+        </div>
+    </div>
+{{/each}}

@@ -1,0 +1,11 @@
+<h2>{{data.title}}</h2>
+
+
+<form method='POST' action="/product/{{data.product.id}}" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" name="_method" value="{{data.method}}">
+    <input name="product" placeholder="Product Name" value="{{data.product.product}}">
+    <input name="price" placeholder="Price" value="{{data.product.price}}">
+    <textarea name="description" rows="4" cols="40" placeholder="Description">{{data.product.description}}</textarea>
+    <button type="submit" name="">{{data.button}}</button>
+
+</form>
