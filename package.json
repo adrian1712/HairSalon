@@ -18,6 +18,7 @@
     "json-server": "^0.9.2",
     "method-override": "^2.3.7",
     "mongoose": "^4.7.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "sendgrid": "^4.7.1"
   }
 }

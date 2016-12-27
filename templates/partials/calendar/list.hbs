@@ -1,34 +1,39 @@
 <h2>CALENDAR</h2>
 
-<a class="btn btn-primary" href="calendar/create">Make Apionment</a>
-<a class="btn btn-primary" href="/calendar">All Appointments</a>
+<a class="ui secondary button" href="calendar/create">Make Apionment</a>
+<a class="ui button" href="/calendar">All Appointments</a>
 
-
-   <form method = "POST" action="/calendar" enctype="application/x-www-form-urlencoded">
+<div class="date">
+   <form class="ui form" method = "POST" action="/calendar" enctype="application/x-www-form-urlencoded">
        <input name="_method" type="hidden" value="GET">
-       <div class="form-group">
+       <div class="field">
            <label for="date">Date: </label>
            <input name="date" type="date" placeholder="Starting Date">
        </div>
-   <button class="btn btn-default" type="submit">Load</button>
+   <button class="ui secondary button" type="submit">Load</button>
    </form>
+</div>
 
 
 
 {{#each data.appointmentList}}
-    <div class="panel panel-default">
-        <div class="panel-body" >
-            <div>
-                <strong>Name </strong> <a href="/calendar/{{id}}">{{username}}</a>
-            </div>
-            <div>
-                <strong>Date and Time</strong> {{date}}
-            </div>
-            <div>
-                <strong>Time</strong> {{time}}
-            </div>
-            <div>
-                <strong>Color </strong> {{color}}
+    <div class="column">
+        <div class="ui inverted segment">
+                <div>
+                    <strong>Name </strong> <a href="/calendar/{{id}}">{{username}}</a>
+                </div>
+                <div class="ui inverted divider"></div>
+                <div>
+                    <strong>Date and Time</strong> {{date}}
+                </div>
+                <div class="ui inverted divider"></div>
+                <div>
+                    <strong>Time</strong> {{time}}
+                </div>
+                <div class="ui inverted divider"></div>
+                <div>
+                    <strong>Color </strong> {{color}}
+                </div>
             </div>
         </div>
     </div>

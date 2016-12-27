@@ -1,12 +1,39 @@
 <h2>{{data.title}}</h2>
 
+<div class="ui inverted segment">
+    <div class="ui inverted">
 
-<form method='POST' action="/calendar/{{data.appointment.id}}" enctype="application/x-www-form-urlencoded">
-    <input type="hidden" name="_method" value="{{data.method}}">
-    <input name="username" placeholder="Name" value="{{data.appointment.username}}">
-    <input type="date" name="date" placeholder="Date" value="{{data.appointment.date}}">
-    <input type="time" name="time" placeholder="Time" value="{{data.appointment.time}}">
-    <input name="color" placeholder="Color" value="{{data.appointment.color}}">
-    <button type="submit" name="">Make Appointment</button>
+    </div>
+    <form method='POST' action="/calendar/{{data.appointment.id}}" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="_method" value="{{data.method}}">
+        <input name="username" placeholder="Name" value="{{data.appointment.username}}">
+        <input type="date" name="date" placeholder="Date" value="{{data.appointment.date}}">
+        <input type="time" name="time" placeholder="Time" value="{{data.appointment.time}}">
+        <input name="color" placeholder="Color" value="{{data.appointment.color}}">
+        <button type="submit" name="">Make Appointment</button>
+    </form>
+</div>
 
-</form>
+<!--
+<div class="ui inverted segment">
+  <div class="ui inverted form">
+    <div class="two fields">
+      <div class="field">
+        <label>First Name</label>
+        <input placeholder="First Name" type="text">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input placeholder="Last Name" type="text">
+      </div>
+    </div>
+    <div class="inline field">
+      <div class="ui checkbox">
+        <input type="checkbox" tabindex="0" class="hidden">
+        <label>I agree to the terms and conditions</label>
+      </div>
+    </div>
+    <div class="ui submit button">Submit</div>
+  </div>
+</div>
+-->

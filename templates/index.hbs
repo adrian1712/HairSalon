@@ -3,35 +3,47 @@
     <head>
         <meta charset="utf-8">
         <title>Hair Salon</title>
-        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css" type="text/css">
+        <link rel="stylesheet" href="/css/style.less" type="text/less">
+        <!-- <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" type="text/css"> -->
 
+        <script>
+            less = {
+                env: "development",
+                async: false,
+                fileAsync: false,
+                poll: 1000,
+                functions: {},
+                dumpLineNumbers: "comments",
+                relativeUrls: false,
+                rootpath: "/"
+            };
+            </script>
 
-        <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="/lib/jquery/dist/jquery.js">
-
-        </script>
+        <script src="/lib/less/dist/less.js"></script>
+        <script src="/lib/jquery/dist/jquery.js"></script>
+        <!-- <script src="/lib/bootstrap/dist/js/bootstrap.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>
 
     </head>
     <body>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand">Hair Salon</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/product">Products</a></li>
-                    <li><a href="/admin/#">Angular</a></li>
-                    {{#if user}}
-                    <li><a href="/user/logout">Log Out</a></li>
-                    {{else}}
-                    <li><a href="/calendar">Calendar</a></li>
-                    <li><a href="/user/login">LogIn</a></li>
-                    <li><a href="/user/register">Register</a></li>
-                    {{/if}}
-                </ul>
+        <div class="ui inverted fixed menu">
+            <a href="/"class="item">Home</a>
+            <a href="/services"class="item">Services</a>
+            <a href="/product"class="item">Products</a>
+            {{#if user}}
+            <a href="/admin/#"class="item">Angular</a>
+            <a href="/calendar"class="item">Calendar</a>
+            {{/if}}
+            <div class="right menu">
+                {{#if user}}
+                <a href="/user/logout"class="item">Log Out</a>
+                {{else}}
+                <a href="/user/login"class="item">LogIn</a>
+                <!-- <a href="/user/register"class="item">Register</a> -->
+                {{/if}}
             </div>
+        </div>
 
             <!-- NOTE:6 This is where and how you inject the body content -->
         {{{body}}}

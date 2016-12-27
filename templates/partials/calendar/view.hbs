@@ -1,21 +1,30 @@
+<body id="view">
+
 <h2>CALENDAR</h2>
+<div class="">
+    <a class="ui secondary button"href="/calendar/{{ data.appointment.id }}/edit">Edit Appointment</a>
+    <a class="negative ui button"href="/calendar/{{ data.appointment.id }}/delete">Delete Appointment</a>
+</div>
 
-<a class="btn btn-primary"href="/calendar/{{ data.appointment.id }}/edit">Edit Appointment</a>
-<a class="btn btn-danger"href="/calendar/{{ data.appointment.id }}/delete">Delete Appointment</a>
-
-<div class="panel panel-default">
-    <div class="panel-body" >
+<div class="columnview">
+    <div class="ui inverted segment" >
         <div>
-            <strong>Name </strong> {{data.appointment.username}}
+            <strong>Name   </strong> {{data.appointment.username}}
         </div>
+        <div class="ui inverted divider"></div>
         <div>
-            <strong>Date </strong> {{data.appointment.date}}
+            <strong>Date   </strong> {{data.appointment.date}}
         </div>
+        <div class="ui inverted divider"></div>
         <div>
-            <strong>Time </strong> {{data.appointment.time}}
+            <strong>Time   </strong> {{data.appointment.time}}
         </div>
+        <div class="ui inverted divider"></div>
         <div>
-            <strong>Color </strong> {{data.appointment.color}}
+            <strong>Color   </strong> {{data.appointment.color}}
         </div>
     </div>
 </div>
+
+
+</body>
