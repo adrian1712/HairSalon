@@ -10,6 +10,12 @@ var App;
                 templateUrl: '/templates/partials/home.html',
                 controller: App.HomeController,
                 controllerAs: 'homeController'
+            })
+                .state('products', {
+                url: '/products',
+                templateUrl: '/templates/partials/products.html',
+                controller: App.ProductsController,
+                controllerAs: 'productsController'
             });
         }
     ]);

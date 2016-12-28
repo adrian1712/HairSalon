@@ -1,11 +1,26 @@
 <h2>{{data.title}}</h2>
 
-
-<form method='POST' action="/product/{{data.product.id}}" enctype="application/x-www-form-urlencoded">
-    <input type="hidden" name="_method" value="{{data.method}}">
-    <input name="product" placeholder="Product Name" value="{{data.product.product}}">
-    <input name="price" placeholder="Price" value="{{data.product.price}}">
-    <textarea name="description" rows="4" cols="40" placeholder="Description">{{data.product.description}}</textarea>
-    <button type="submit" name="">{{data.button}}</button>
-
-</form>
+<div class="ui inverted segment">
+    <div class="ui inverted form">
+        <form method='POST' action="/product/{{data.product.id}}" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="_method" value="{{data.method}}">
+            <div class="two fields">
+                <div class="field">
+                    <label>Product Name</label>
+                    <input name="product" placeholder="Product Name" value="{{data.product.product}}">
+                </div>
+                <div class="field">
+                    <label>Price</label>
+                    <input name="price" placeholder="Price" value="{{data.product.price}}">
+                </div>
+            </div>
+            <div class="inline field">
+                <div class="field">
+                    <label>Description</label>
+                    <textarea name="description" rows="4" cols="40" placeholder="Description">{{data.product.description}}</textarea>
+                </div>
+            </div>
+            <button class="ui submit button" type="submit" name="">{{data.button}}</button>
+        </form>
+    </div>
+</div>

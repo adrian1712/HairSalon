@@ -1,20 +1,26 @@
 <h2>Products</h2>
 
-<a class="btn btn-primary" href="product/create">Make Products</a>
+<a class="ui secondary button" href="product/create">Make Products</a>
 
 
 {{#each data.productList}}
-    <div class="panel panel-default">
-        <div class="panel-body" >
+    <div class="column">
+        <div class="ui inverted segment" >
             <div>
-                <strong>Name </strong> <a href="/product/{{id}}">{{product}}</a>
+                <strong>Name </strong>
+                <div><a href="/product/{{id}}">{{product}}</a></div>
             </div>
+            <div class="ui inverted divider"></div>
             <div>
-                <strong>Price</strong>{{price}}
+                <strong>Price</strong>
+                <div>${{price}}</div>
             </div>
+            <div class="ui inverted divider"></div>
             <div>
-                <strong>Description</strong>{{description}}
+                <strong>Description</strong>
+                <div>{{description}}</div>
             </div>
         </div>
     </div>
+
 {{/each}}

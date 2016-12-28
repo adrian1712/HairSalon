@@ -1,20 +1,29 @@
 <h2>Product</h2>
 
-<a class="btn btn-primary"href="/product/{{ data.product.id }}/edit">Edit Appointment</a>
-<a class="btn btn-danger"href="/product/{{ data.product.id }}/delete">Delete Appointment</a>
+<a class="ui secondary button"href="/product/{{ data.product.id }}/edit">Edit Product</a>
+<a class="negative ui button"href="/product/{{ data.product.id }}/delete">Delete Product</a>
 
 
 
-<div class="panel panel-default">
-    <div class="panel-body" >
+<div class="columnview">
+    <div class="ui inverted segment" >
         <div>
-            <strong>Name </strong> {{data.product.product}}
+            <strong>Name </strong>
+            <div>
+                {{data.product.product}}
+            </div>
         </div>
         <div>
-            <strong>Price</strong>{{data.product.price}}
+            <strong>Price</strong>
+            <div>
+                ${{data.product.price}}
+            </div>
         </div>
         <div>
-            <strong>Description</strong>{{data.product.description}}
+            <strong>Description</strong>
+            <div>
+                {{data.product.description}}
+            </div>
         </div>
     </div>
 </div>
