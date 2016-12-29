@@ -1,0 +1,29 @@
+<h2>Products</h2>
+
+<!-- <button ng-click="productController.goToPage ('product-create')">Create Product</button> -->
+
+<!-- <a class="ui secondary button" ui-sref="product-create">Create</a> -->
+
+
+<button ng-click="productController.goToPage ('product-create')">Create Product</button>
+<button ng-click="productController.read ()">Read Products</button>
+
+<!-- Fill page with listing of products -->
+<ul>
+    <li ng-repeat="item in productController.list">
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <td><a href="#" ng-click="productController.goToPage ('product-view', { id: product._id })">{{ item.product }}</a></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ item.price }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ item.description }}</td>
+            </tr>
+        </table>
+    </li>
+</ul>

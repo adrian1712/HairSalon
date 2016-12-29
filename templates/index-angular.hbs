@@ -2,17 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Products</title>
+        <title>Hair Salon</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css" type="text/css">
+        <link rel="stylesheet" href="/css/style.less" type="text/less">
+
+        <script>
+            less = {
+                env: "development",
+                async: false,
+                fileAsync: false,
+                poll: 1000,
+                functions: {},
+                dumpLineNumbers: "comments",
+                relativeUrls: false,
+                rootpath: "/"
+            };
+        </script>
+
+        <script src="/lib/less/dist/less.js"></script>
+        <script src="/lib/jquery/dist/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.js"></script>
+
     </head>
 
 <!-- you need ng app to inject the body -->
 
-    <body ng-app="App">
-        <nav>
-            <a href="/">Express</a>
-            <a href="/admin/#/">Angular Home</a>
-            <a href="/admin/#/products">Product</a>
-
+    <body class="angular" ng-app="App">
+        <div class="ui inverted menu">
+            <a class="item" href="/">Express</a>
+            <a class="item" href="/admin/#/">Angular Home</a>
+            <a class="item" href="/admin/#/product">Product</a>
+        </div>
             <!-- this is where we inject the content -->
 
             <div ui-view></div>
@@ -24,8 +44,9 @@
             <!-- connect the App.js and controllers together -->
             <script src="/js/angular/App.js"></script>
             <script src="/js/angular/HomeController.js"></script>
-            <script src="/js/angular/ProductsController.js"></script>
-            
+            <script src="/js/angular/ProductController.js"></script>
+            <script src="/js/angular/ProductService.js"></script>
+
         </nav>
     </body>
 </html>

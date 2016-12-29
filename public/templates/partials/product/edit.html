@@ -1,0 +1,19 @@
+<h2>Products</h2>
+
+
+<form ng-submit="productController.create (productController.product._id)">
+    <div>
+        <label>Name</label>
+        <input ng-model="productController.product.product">
+    </div>
+    <div>
+        <label>price</label>
+        <input ng-model="productController.product.price">
+    </div>
+    <div>
+        <label>Description</label>
+        <input ng-model="productController.item.description">
+    </div>
+
+    <button class="ui secondary button">Create Product</button>
+</form>

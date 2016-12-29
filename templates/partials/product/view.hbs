@@ -27,3 +27,26 @@
         </div>
     </div>
 </div>
+{{#if user}}
+<div class="ui inverted segment">
+    <div class="ui inverted form">
+        <form action="/product/{{data.product.id}}/comment" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="inline field">
+                <div class="field">
+                    <label>Comment</label>
+                    <textarea class="form-control"name="content"></textarea>
+                </div>
+                <button class="ui submit button" type="submit">Add Comment</button>
+            </div>
+        </form>
+    </div>
+</div>
+{{/if}}
+{{#each data.product.comments}}
+<div class="columnview">
+    <div class="ui inverted segment" >
+            <a href="/user/{{author.id}}">{{author.username}}</a>
+            <p>{{content}}</p>
+        </div>
+    </div>
+{{/each}}

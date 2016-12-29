@@ -11,11 +11,29 @@ var App;
                 controller: App.HomeController,
                 controllerAs: 'homeController'
             })
-                .state('products', {
-                url: '/products',
-                templateUrl: '/templates/partials/products.html',
-                controller: App.ProductsController,
-                controllerAs: 'productsController'
+                .state('product', {
+                url: '/product',
+                templateUrl: '/templates/partials/product/list.html',
+                controller: App.ProductController,
+                controllerAs: 'productController'
+            })
+                .state('product-create', {
+                url: '/product/create',
+                templateUrl: '/templates/partials/product/edit.html',
+                controller: App.ProductController,
+                controllerAs: 'productController',
+            })
+                .state('product-view', {
+                url: '/product/:id',
+                templateUrl: '/templates/partials/product/view.html',
+                controller: App.ProductController,
+                controllerAs: 'productController'
+            })
+                .state('product-edit', {
+                url: '/product/:id',
+                templateUrl: '/templates/partials/product/edit.html',
+                controller: App.ProductController,
+                controllerAs: 'productController'
             });
         }
     ]);
