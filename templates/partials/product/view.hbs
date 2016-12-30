@@ -1,7 +1,8 @@
 <h2>Product</h2>
-
+{{#if user.admin }}
 <a class="ui secondary button"href="/product/{{ data.product.id }}/edit">Edit Product</a>
 <a class="negative ui button"href="/product/{{ data.product.id }}/delete">Delete Product</a>
+{{/if }}
 
 
 
@@ -24,6 +25,10 @@
             <div>
                 {{data.product.description}}
             </div>
+        </div>
+        <div>
+            <strong>Image</strong>
+            <img src="{{ data.product.imageUrl }}" height="120px">
         </div>
     </div>
 </div>

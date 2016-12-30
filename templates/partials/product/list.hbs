@@ -1,7 +1,8 @@
 <h2>Products</h2>
 
+{{#if user.admin }}
 <a class="ui secondary button" href="product/create">Make Products</a>
-
+{{/if }}
 
 {{#each data.productList}}
     <div class="column">
@@ -19,6 +20,11 @@
             <div>
                 <strong>Description</strong>
                 <div>{{description}}</div>
+            </div>
+            <div class="ui inverted divider"></div>
+            <div>
+                <strong>Image</strong>
+                <img src="{{ imageUrl }}" height="100px">
             </div>
         </div>
     </div>

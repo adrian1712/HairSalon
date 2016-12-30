@@ -5,6 +5,9 @@ var router = express.Router();
 var Product = require ('../model/product.js')
 var Comment = require ('../model/comment.js');
 
+var multer = require ('multer');
+var processUploadFile = multer ({ dest: './temp' });
+
 router.get ('/', function(request,response){
     Product.find ({}, function (error,result) {
         if (error) {
@@ -36,16 +39,38 @@ router.get ('/create', function (request, response) {
         data: {
             title: 'Create Product',
             button: 'Create Product',
-            method: 'POST'
+            method: 'POST',
+            enctype: "multipart/form-data"
         }
     })
 })
 
-router.post('/', function(request, response) {
+router.post('/', processUploadFile.single ('imageFile'), function(request, response) {
     // NOTE:14 the appointment is made using body information
     // appointment is defined in the model
-    var newProduct = Product (request.body);
+    // NOTE: uploading files \/
+    console.log('File', request.file);
+    console.log('Body', request.body);
+    console.log('Path', request.file.path);
 
+    // NOTE: bring inthe  fs module
+    var fs = require ('fs-extra');
+    var source = request.file.path;
+    var basePath = './public';
+    var destination = '/img/uploads/' + request.file.originalname;
+
+    var newProduct = Product ({
+        product: request.body.product,
+        price: request.body.price,
+        description: request.body.description,
+        imageUrl: destination,
+    });
+
+
+    fs.move (source, (basePath + destination), function (error) {
+        fs.remove (source, function (error) {
+        })
+    })
     newProduct.save (function(error){
         if (error) {
             var errorMessage = 'canot create Product';
@@ -58,7 +83,8 @@ router.post('/', function(request, response) {
                     message: 'Connected to the product post path.'
                 })
             }
-            else {var Comment = require ('../model/comment.js');
+            else {
+                var Comment = require ('../model/comment.js');
                 response.redirect ('./create');
             }
         }
@@ -118,10 +144,11 @@ router.get('/:id/edit', function(request, response){
         else {
             response.render ('product/edit', {
                 data: {
-                    title: 'Edit Product',
+                    title: 'Edit Product info',
                     method: 'PUT',
                     button: 'Edit Product',
-                    product: result
+                    product: result,
+                    enctype: "application/x-www-form-urlencoded"
                 }
             })
         }
@@ -130,6 +157,20 @@ router.get('/:id/edit', function(request, response){
 
 router.put ('/:id', function (request, response) {
     var productId = request.params.id
+    // console.log('File', request.file);
+    // console.log('Body', request.body);
+    // console.log('Path', request.file.path);
+    //
+    // // NOTE: bring inthe  fs module
+    // var fs = require ('fs-extra');
+    // var source = request.file.path;
+    // var basePath = './public';
+    // var destination = '/img/uploads/' + request.file.originalname;
+    //
+    // fs.move (source, (basePath + destination), function (error) {
+    //     fs.remove (source, function (error) {
+    //     })
+    // })
         Product.findByIdAndUpdate(productId,request.body,function(error,result) {
             if (error){
                 console.log('can not update product');

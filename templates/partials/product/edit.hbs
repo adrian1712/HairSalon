@@ -2,22 +2,29 @@
 
 <div class="ui inverted segment">
     <div class="ui inverted form">
-        <form method='POST' action="/product/{{data.product.id}}" enctype="application/x-www-form-urlencoded">
+        <form method='POST' action="/product/{{data.product.id}}" enctype={{data.enctype}}>
             <input type="hidden" name="_method" value="{{data.method}}">
             <div class="two fields">
                 <div class="field">
                     <label>Product Name</label>
-                    <input name="product" placeholder="Product Name" value="{{data.product.product}}">
+                    <input name="product" placeholder="Product Name" value="{{data.product.product}}" required>
                 </div>
                 <div class="field">
                     <label>Price</label>
-                    <input name="price" placeholder="Price" value="{{data.product.price}}">
+                    <input name="price" placeholder="Price" value="{{data.product.price}} {{data.method}}">
                 </div>
             </div>
-            <div class="inline field">
+
+            <!-- <div class="inline field"> -->
+
+            <div class="two fields">
                 <div class="field">
                     <label>Description</label>
                     <textarea name="description" rows="4" cols="40" placeholder="Description">{{data.product.description}}</textarea>
+                </div>
+                <div class="field">
+                    <label>Upload Picture</label>
+                    <input type="file" name="imageFile">
                 </div>
             </div>
             <button class="ui submit button" type="submit" name="">{{data.button}}</button>

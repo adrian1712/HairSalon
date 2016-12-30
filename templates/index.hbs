@@ -32,8 +32,10 @@
             <a href="/"class="item">Home</a>
             <a href="/services"class="item">Services</a>
             <a href="/product"class="item">Products</a>
-            {{#if user}}
+            {{#if user.admin }}
             <a href="/admin/#"class="item">Angular</a>
+            {{/if }}
+            {{#if user}}
             <a href="/calendar"class="item">Calendar</a>
             {{/if}}
             <div class="right menu">
