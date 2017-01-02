@@ -1,7 +1,8 @@
 <h2>CALENDAR</h2>
-
+{{#if user.admin}}
 <a class="ui secondary button" href="calendar/create">Make Apionment</a>
 <a class="ui button" href="/calendar">All Appointments</a>
+{{/if}}
 
 <div class="date">
    <form class="ui form" method = "POST" action="/calendar" enctype="application/x-www-form-urlencoded">

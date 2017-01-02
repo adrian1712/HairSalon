@@ -135,8 +135,11 @@ server.use ('/', basicRoutes);
 
 // connect to user.js_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-var userRoutes = require ('./routes/user.js');
+var userRoutes = require ('./routes/user/user.js');
 server.use('/user', userRoutes);
+
+var accessRoutes = require ('./routes/user/access.js');
+server.use('/', accessRoutes);
 
 // _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 

@@ -1,11 +1,12 @@
 <body id="view">
 
 <h2>CALENDAR</h2>
+{{#if user.admin}}
 <div class="">
     <a class="ui secondary button"href="/calendar/{{ data.appointment.id }}/edit">Edit Appointment</a>
     <a class="negative ui button"href="/calendar/{{ data.appointment.id }}/delete">Delete Appointment</a>
 </div>
-
+{{/if}}
 <div class="columnview">
     <div class="ui inverted segment" >
         <div>

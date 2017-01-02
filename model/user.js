@@ -8,7 +8,8 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema ({
     username: String,
     password: String,
-    email: String
+    email: String,
+    type: String
 })
 
 // NOTE: 16d

@@ -1,0 +1,18 @@
+<h2>Users</h2>
+
+<a class="ui secondary button"href="/user/create">Create User</a>
+
+
+{{#each data.usersList}}
+    <div class="column">
+        <div class="ui inverted segment">
+            <div>
+                <strong>Name </strong> <a href="/user/{{id}}">{{username}}</a>
+            </div>
+            <div class="ui inverted divider"></div>
+            <div>
+                <strong>E-mail </strong>{{email}}
+            </div>
+        </div>
+    </div>
+{{/each}}

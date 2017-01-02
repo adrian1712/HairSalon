@@ -1,0 +1,23 @@
+<h2>View User</h2>
+
+<a class="ui secondary button"href="/user/{{ data.user.id }}/edit">Edit User</a>
+<a class="negative ui button"href="/user/{{ data.user.id }}/delete">Delete User</a>
+
+
+<div>
+    <div class="columnview">
+        <div class="ui inverted segment">
+            <div>
+                <strong>Name </strong>{{data.user.username}}
+            </div>
+            <div class="ui inverted divider"></div>
+            <div>
+                <strong>Type </strong>{{data.user.type}}
+            </div>
+            <div class="ui inverted divider"></div>
+            <div>
+                <strong>E-Mail</strong> {{data.user.email}}
+            </div>
+        </div>
+    </div>
+</div>

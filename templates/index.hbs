@@ -32,19 +32,25 @@
             <a href="/"class="item">Home</a>
             <a href="/services"class="item">Services</a>
             <a href="/product"class="item">Products</a>
+
             {{#if user.admin }}
             <a href="/admin/#"class="item">Angular</a>
+            <a href="/user" class="item">Users</a>
             {{/if }}
             {{#if user}}
             <a href="/calendar"class="item">Calendar</a>
             {{/if}}
+
             <div class="right menu">
+
                 {{#if user}}
-                <a href="/user/logout"class="item">Log Out</a>
+                <a href="/logout"class="item">Log Out</a>
+
                 {{else}}
-                <a href="/user/login"class="item">LogIn</a>
-                <!-- <a href="/user/register"class="item">Register</a> -->
+                <a href="/login"class="item">LogIn</a>
+                <a href="/register"class="item">Register</a>
                 {{/if}}
+
             </div>
         </div>
 
