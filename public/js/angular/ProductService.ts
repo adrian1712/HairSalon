@@ -31,19 +31,13 @@
 
 
 namespace App {
-    // Grab the app module.
     let app = angular.module ('App');
 
     export class ProductService {
         static $inject = ['$http'];
 
         private httpService;
-
-        // Pull in the dependency services.
         constructor ($httpService: angular.IHttpService) {
-
-            // Point the internal httpService to the
-            // $httpService passed to us by angular.
             this.httpService = $httpService;
         }
 
@@ -62,8 +56,6 @@ namespace App {
 
         public read (id) {
             let url = '/product';
-
-            // If a valid id was passed in, modify the url.
             if (id) {
                 url = url + '/' + id;
             }
@@ -97,7 +89,5 @@ namespace App {
             return promise;
         }
     }
-
-    // Register the class as a angular service.
     app.service ('ProductService', ProductService);
 }

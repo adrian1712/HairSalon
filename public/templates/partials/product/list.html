@@ -1,14 +1,8 @@
 <h2>Products</h2>
 
-<!-- <button ng-click="productController.goToPage ('product-create')">Create Product</button> -->
-
-<!-- <a class="ui secondary button" ui-sref="product-create">Create</a> -->
-
-
 <button ng-click="productController.goToPage ('product-create')">Create Product</button>
 <button ng-click="productController.read ()">Read Products</button>
 
-<!-- Fill page with listing of products -->
 <ul>
     <li ng-repeat="item in productController.list">
         <table border="1">

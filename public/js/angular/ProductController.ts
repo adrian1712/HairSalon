@@ -74,8 +74,6 @@ namespace App {
             if (this.stateParamsService.id) {
                 this.read (this.stateParamsService.id);
             }
-
-            // Check the route we are actually on.
             console.log ('- current route: ', this.stateService.current);
 
             if (this.stateService.current.name == 'product-edit') {
@@ -117,8 +115,6 @@ namespace App {
         public update (id) {
             this.productService.update (id, this.product)
                 .success ((response) => {
-                    // Once the product has been updated, redirect
-                    // back to the product view to see changes.
                     this.goToPage ('product-view', { id: id });
                 })
                 .error ((response) => {
