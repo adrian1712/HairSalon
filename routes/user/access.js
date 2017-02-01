@@ -61,7 +61,7 @@ router.post ('/register', function(request, response){
                     console.log ('body: ', body);
 
                     // console.log('user saved', request.body.username);
-                    response.redirect ('/user/login');
+                    response.redirect ('/login');
                 }
             )
             // //.on is chained so you only need one ; at the end of all of the .on calls.

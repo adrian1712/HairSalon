@@ -101,10 +101,17 @@ server.listen ( port, function (error) {
 // load mongoose
 var mongoose = require ('mongoose');
 // connect mongoose
-mongoose.connect ('mongodb://localhost:27017/salon_database')
+// mongoose.connect ('mongodb://localhost:27017/salon_database')
+// NOTE: this uses mlab insted of localhost
+mongoose.connect('mongodb://hairsalon:hairsalon12@ds141209.mlab.com:41209/hair_salon');
+
 // set the library to user
 
 mongoose.Promise = require('bluebird');
+
+
+
+
 
 // connect to basic.js_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
