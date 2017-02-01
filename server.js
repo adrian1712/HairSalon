@@ -99,11 +99,12 @@ server.listen ( port, function (error) {
 
 // NOTE:14a bring in mongoose
 // load mongoose
+var mlabKey = require('./.env').mlabKey;
 var mongoose = require ('mongoose');
 // connect mongoose
 // mongoose.connect ('mongodb://localhost:27017/salon_database')
 // NOTE: this uses mlab insted of localhost
-mongoose.connect('mongodb://hairsalon:hairsalon12@ds141209.mlab.com:41209/hair_salon');
+mongoose.connect(mlabKey);
 
 // set the library to user
 
