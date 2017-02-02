@@ -49,7 +49,8 @@ server.use(function (request, response, next) {
 
     // grav the content type from the request
     var contentType = request.headers ['content-type'];
-    console.log('contents type is: ', contentType);
+
+    // console.log('contents type is: ', contentType);
 
     //  set our request object to use JSON if we detect a request for application/json
     if (contentType == 'application/json') {
